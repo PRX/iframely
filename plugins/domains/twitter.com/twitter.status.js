@@ -193,6 +193,11 @@ module.exports = {
 
         var html = twitter_oembed.html;
 
+        // Temp test for migration April 27, 2020
+        if (new Date() < new Date ("2020-05-30")) {
+            html = html.replace('https://platform.twitter.com/widgets.js', 'https://ton.twimg.com/syndication/widgetsjs/partner/widgets.js');
+        }
+
         // Apply config
         var locale = options.getProviderOptions('locale');
         if (locale && /^\w{2}(?:\_|\-)\w{2,3}$/.test(locale)) {
