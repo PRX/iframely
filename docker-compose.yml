@@ -1,11 +1,13 @@
-iframely:
-  build: .
-  ports:
-    - "8061:8061"
-  environment:
-    VIRTUAL_HOST: iframely.prx.docker
-  mem_limit: 500M
-  restart: always
-  command: serve
-  env_file:
-      - .env
+version: "2"
+services:
+  iframely:
+    build: .
+    ports:
+      - "8061:8061"
+    environment:
+      VIRTUAL_HOST: iframely.prx.docker
+    mem_limit: 500M
+    restart: always
+    command: serve
+    env_file:
+        - .env
